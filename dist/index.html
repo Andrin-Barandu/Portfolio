@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#3843a5" />
+    <title>Andrin Barandun — Mediamatiker EFZ</title>
+    <meta
+      name="description"
+      content="Das kreative Portfolio von Andrin Barandun. Video, Fotografie, Projekte, 3D, Branding, Print und Web."
+    />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="content.js"></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <header class="menubar">
+      <button class="brand" data-open="about" aria-label="Über Andrin">
+        ab<span>®</span></button
+      ><button class="menu-name" data-open="work">Portfolio</button
+      ><button class="menu-secondary" data-open="about">About</button
+      ><button class="menu-secondary" data-open="contact">Contact</button
+      ><span class="menu-spacer"></span
+      ><span class="menu-status">Andrin’s creative desktop</span
+      ><time id="clock"></time>
+    </header>
+    <main id="desktop" aria-label="Portfolio Desktop">
+      <div class="wallpaper-type" aria-hidden="true">
+        <span>Made to</span><span>move you.</span
+        ><small>ANDRIN BARANDUN · MULTIMEDIA DESIGN</small>
+      </div>
+      <nav id="desktop-icons" aria-label="Portfolio-Kategorien"></nav>
+      <div id="windows"></div>
+      <p class="desktop-hint">Ein Doppelklick. Neue Perspektiven.</p>
+    </main>
+    <nav class="dock" aria-label="Dock">
+      <div id="dock-apps"></div>
+      <div id="dock-minimized"></div>
+      <span class="dock-divider"></span
+      ><button
+        class="dock-button home-button"
+        data-desktop
+        aria-label="Schreibtisch anzeigen"
+        title="Schreibtisch anzeigen"
+      >
+        <span class="dock-icon desktop-app">▱</span
+        ><span class="dock-label">Schreibtisch</span>
+      </button>
+    </nav>
+    <div id="announcer" class="sr-only" aria-live="polite"></div>
+    <noscript
+      ><div class="noscript">
+        Andrin Barandun — Mediamatiker EFZ. Bitte aktiviere JavaScript, um das
+        interaktive Portfolio zu erkunden.
+      </div></noscript
+    >
+  </body>
+</html>
