@@ -488,13 +488,26 @@
         },
       );
     }
-    if (id === "about")
+    if (id === "about") {
+      const timeline = (data.timeline || [])
+        .map(
+          (t) =>
+            `<li><span class="tl-period">${escape(t.period)}</span><strong>${escape(t.title)}</strong><em>${escape(t.org)}</em><p>${escape(t.text)}</p></li>`,
+        )
+        .join("");
+      const skillGroups = (data.skills || [])
+        .map(
+          (g) =>
+            `<div class="skill-group"><h3>${escape(g.title)}</h3><div class="skill-tags">${(g.items || []).map((s) => `<span>${escape(s)}</span>`).join("")}</div></div>`,
+        )
+        .join("");
       showWindow(
         id,
         "About — Andrin",
-        `<article class="content-page">${safeURL(data.aboutImage) ? `<img class="about-photo" src="${safeURL(data.aboutImage)}" alt="${escape(data.name)}">` : '<div class="large-letter">ab.</div>'}<p class="eyebrow">Hallo, ich bin Andrin.</p><h1>${escape(data.intro)}</h1><p>${escape(data.about)}</p><div class="skill-tags">${data.categories.map((c) => `<span>${escape(c.name)}</span>`).join("")}</div><button class="primary" data-open="contact">Kontakt aufnehmen ↗</button></article>`,
-        { width: 520, height: 540 },
+        `<article class="content-page">${safeURL(data.aboutImage) ? `<img class="about-photo" src="${safeURL(data.aboutImage)}" alt="${escape(data.name)}">` : '<div class="large-letter">ab.</div>'}<p class="eyebrow">Hallo, ich bin Andrin.</p><h1>${escape(data.intro)}</h1><p>${escape(data.about)}</p><div class="skill-tags">${data.categories.map((c) => `<span>${escape(c.name)}</span>`).join("")}</div>${timeline ? `<h2 class="about-heading">Werdegang</h2><ol class="timeline">${timeline}</ol>` : ""}${skillGroups ? `<h2 class="about-heading">Skills &amp; Tools</h2><div class="skill-groups">${skillGroups}</div>` : ""}<button class="primary" data-open="contact">Kontakt aufnehmen ↗</button></article>`,
+        { width: 560, height: 640 },
       );
+    }
     if (id === "cv")
       showWindow(
         id,
@@ -506,9 +519,36 @@
       showWindow(
         id,
         "Contact — Let’s talk",
-        `<article class="content-page"><p class="eyebrow">Kontakt</p><h1>Gute Ideen beginnen<br>mit einem Hallo.</h1><p>Für kreative Projekte und neue Perspektiven.</p>${data.email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email) ? `<a class="primary" href="mailto:${escape(encodeURIComponent(data.email).replace("%40", "@"))}">${escape(data.email)} ↗</a>` : '<div class="empty-note">Die Kontaktadresse wird bald ergänzt.</div>'}</article>`,
-        { width: 480, height: 350 },
+        `<article class="content-page"><p class="eyebrow">Kontakt</p><h1>Gute Ideen beginnen<br>mit einem Hallo.</h1><p>Für kreative Projekte und neue Perspektiven.</p>${data.email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email) ? `<a class="primary" href="mailto:${escape(encodeURIComponent(data.email).replace("%40", "@"))}">${escape(data.email)} ↗</a>` : '<div class="empty-note">Die Kontaktadresse wird bald ergänzt.</div>'}<p class="legal-inline"><button type="button" data-open="impressum">Impressum</button> · <button type="button" data-open="datenschutz">Datenschutz</button></p></article>`,
+        { width: 480, height: 390 },
       );
+    if ((id === "impressum" || id === "datenschutz") && data.legal && data.legal[id]) {
+      const page = data.legal[id];
+      const other = id === "impressum" ? "datenschutz" : "impressum";
+      const fill = (s) =>
+        escape(
+          String(s)
+            .replaceAll("{name}", data.name || "")
+            .replaceAll("{email}", data.email || ""),
+        )
+          .replace(/\n/g, "<br>")
+          .replace(
+            /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g,
+            (m) => `<a href="mailto:${m}">${m}</a>`,
+          );
+      const body = (page.sections || [])
+        .map(
+          (s) =>
+            `<h2>${escape(s.title)}</h2>${(s.text || []).map((t) => `<p>${fill(t)}</p>`).join("")}`,
+        )
+        .join("");
+      showWindow(
+        id,
+        `${page.title} — Andrin Barandun`,
+        `<article class="content-page legal-page"><p class="eyebrow">Rechtliches</p><h1>${escape(page.title)}</h1>${page.intro ? `<p class="legal-lead">${fill(page.intro)}</p>` : ""}${body}<p class="legal-note">Stand: ${escape(data.legal.updated || "")} · <button type="button" class="legal-switch" data-open="${other}">${escape(data.legal[other].title)} ansehen</button></p></article>`,
+        id === "impressum" ? { width: 520, height: 560 } : { width: 600, height: 640 },
+      );
+    }
   }
   renderDesktop();
   document.addEventListener("click", (e) => {

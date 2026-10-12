@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#3843a5" />
+    <meta name="robots" content="noindex" />
+    <title>Seite nicht gefunden — Andrin Barandun</title>
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <style>
+      :root {
+        font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        color: #272733;
+        --accent: #5853ce;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100dvh;
+        background: url("/assets/wallpaper.png") center / cover no-repeat,
+          #333996;
+        display: grid;
+        grid-template-rows: 36px 1fr;
+      }
+      .bar {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        padding: 0 20px;
+        background: #dcdcf2cc;
+        backdrop-filter: blur(14px);
+        font-size: 0.8rem;
+      }
+      .bar a {
+        color: #272733;
+        text-decoration: none;
+      }
+      .bar .brand {
+        font-size: 1.3rem;
+        font-weight: 700;
+        letter-spacing: -0.06em;
+        color: var(--accent);
+      }
+      .bar .brand span {
+        font-size: 0.55em;
+        vertical-align: super;
+      }
+      main {
+        display: grid;
+        place-items: center;
+        padding: 24px 16px 60px;
+      }
+      .window {
+        width: min(100%, 460px);
+        background: #f7f7fc;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 30px 80px #1a1f6a66, 0 0 0 1px #ffffff55;
+      }
+      .titlebar {
+        display: flex;
+        align-items: center;
+        height: 48px;
+        padding: 0 16px;
+        background: #f2f2f8;
+        border-bottom: 1px solid #e5e5eb;
+        position: relative;
+        font-size: 0.8rem;
+        font-weight: 650;
+        color: #6a6879;
+      }
+      .traffic {
+        display: flex;
+        gap: 8px;
+        position: absolute;
+        left: 16px;
+      }
+      .traffic i {
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        border: 1px solid #0001;
+        display: block;
+      }
+      .traffic i:nth-child(1) {
+        background: #ff6059;
+      }
+      .traffic i:nth-child(2) {
+        background: #ffbd2f;
+      }
+      .traffic i:nth-child(3) {
+        background: #28c841;
+      }
+      .titlebar span {
+        margin: 0 auto;
+      }
+      .body {
+        padding: 35px;
+        line-height: 1.7;
+      }
+      .eyebrow {
+        margin: 0 0 17px;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        font-weight: 650;
+        color: #8a899a;
+      }
+      h1 {
+        margin: 0 0 16px;
+        font-size: 2rem;
+        line-height: 1.1;
+        letter-spacing: -0.05em;
+      }
+      p {
+        margin: 0 0 24px;
+        color: #777184;
+        font-size: 0.95rem;
+      }
+      .primary {
+        display: inline-block;
+        padding: 12px 20px;
+        border-radius: 8px;
+        background: var(--accent);
+        color: #fff;
+        font-weight: 650;
+        font-size: 0.9rem;
+        text-decoration: none;
+      }
+      .primary:hover,
+      .primary:focus-visible {
+        background: #4a45bb;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="bar">
+      <a class="brand" href="/" aria-label="Zur Startseite">ab<span>®</span></a>
+      <a href="/">Portfolio</a>
+    </header>
+    <main>
+      <section class="window" aria-labelledby="t">
+        <div class="titlebar">
+          <div class="traffic" aria-hidden="true"><i></i><i></i><i></i></div>
+          <span>404 — Nicht gefunden</span>
+        </div>
+        <div class="body">
+          <p class="eyebrow">Fehler 404</p>
+          <h1 id="t">Diese Seite gibt es nicht.</h1>
+          <p>
+            Der Link ist falsch oder die Seite wurde verschoben. Auf meinem
+            Desktop findest du alle Arbeiten.
+          </p>
+          <a class="primary" href="/">Zurück zum Desktop ↗</a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
