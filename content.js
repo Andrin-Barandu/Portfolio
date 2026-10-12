@@ -6,7 +6,7 @@ window.PORTFOLIO = {
   "title": "Multimedia Designer / Mediamatiker",
   "intro": "Ideen in Bewegung. Gestaltung mit Perspektive.",
   "about": "Mein kreativer Desktop: ein Ort für bewegte Bilder, visuelle Identitäten und digitale Erlebnisse. Hier treffen Video, Design und Technologie aufeinander.",
-  "aboutImage": "assets/_DSC5740.jpeg",
+  "aboutImage": "assets/portrait.jpeg",
   "email": "andrinbarandun02@gmail.com",
   "cv": "assets/CV.pdf",
   "categories": [
