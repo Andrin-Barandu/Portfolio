@@ -790,6 +790,14 @@ a {
   border-radius: 22px;
   margin-bottom: 25px;
 }
+.content-page .about-photo {
+  display: block;
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 22px;
+  margin-bottom: 25px;
+}
 .skill-tags {
   display: flex;
   flex-wrap: wrap;

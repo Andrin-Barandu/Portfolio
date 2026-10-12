@@ -492,7 +492,7 @@
       showWindow(
         id,
         "About — Andrin",
-        `<article class="content-page"><div class="large-letter">ab.</div><p class="eyebrow">Hallo, ich bin Andrin.</p><h1>${escape(data.intro)}</h1><p>${escape(data.about)}</p><div class="skill-tags">${data.categories.map((c) => `<span>${escape(c.name)}</span>`).join("")}</div><button class="primary" data-open="contact">Kontakt aufnehmen ↗</button></article>`,
+        `<article class="content-page">${safeURL(data.aboutImage) ? `<img class="about-photo" src="${safeURL(data.aboutImage)}" alt="${escape(data.name)}">` : '<div class="large-letter">ab.</div>'}<p class="eyebrow">Hallo, ich bin Andrin.</p><h1>${escape(data.intro)}</h1><p>${escape(data.about)}</p><div class="skill-tags">${data.categories.map((c) => `<span>${escape(c.name)}</span>`).join("")}</div><button class="primary" data-open="contact">Kontakt aufnehmen ↗</button></article>`,
         { width: 520, height: 540 },
       );
     if (id === "cv")
