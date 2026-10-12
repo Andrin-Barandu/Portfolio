@@ -68,7 +68,7 @@ window.PORTFOLIO = {
       "subtitle": "Expertenvideo · EKZ",
       "label": "Projekt · EKZ",
       "cover": "ekz",
-      "thumbnail": "",
+      "thumbnail": "/assets/ekz/thumbnail_ekz.png",
       "images": [
         "assets/ekz/beekeeper-post.png"
       ],
