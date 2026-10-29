@@ -291,14 +291,60 @@ window.PORTFOLIO = {
       "placeholder": true
     },
     {
-      "id": "print-selection",
+      "id": "print-ekz-netzelektriker",
       "category": "print",
-      "title": "Auf Papier",
-      "subtitle": "Print · Vorschau",
+      "title": "Netzelektriker:in aufgepasst!",
+      "subtitle": "Plakat · EKZ",
+      "label": "Print · EKZ",
       "cover": "print",
-      "thumbnail": "",
-      "description": "Ein Platz für Editorial Design und Printarbeiten.",
-      "placeholder": true
+      "thumbnail": "assets/print/ekz-netzelektriker.jpg",
+      "images": [
+        "assets/print/ekz-netzelektriker.jpg"
+      ],
+      "description": "Aufruf an die Netzelektriker:innen der EKZ: ein Selfie vom schönsten Arbeitsort einsenden und als Dankeschön 200 Extrapunkte bei «EKZ Plus» erhalten. Das Smartphone im Vordergrund holt den Einsatz am Kandelaber scharf ins Bild."
+    },
+    {
+      "id": "print-ekz-gutschein",
+      "category": "print",
+      "title": "Gutschein für Ihr zukunftbereites Zuhause",
+      "subtitle": "Flyer A5 · EKZ",
+      "label": "Print · EKZ",
+      "cover": "print",
+      "thumbnail": "assets/print/ekz-gutschein-cover.jpg",
+      "images": [
+        "assets/print/ekz-gutschein-cover.jpg"
+      ],
+      "description": "Zweiseitiger A5-Flyer für EKZ mit 500 Franken Messe-Rabatt auf Wärmepumpe, Solaranlage und E-Auto-Ladestation, inklusive Verweis auf den Kombirechner.",
+      "url": "assets/print/ekz-gutschein.pdf",
+      "urlLabel": "Flyer als PDF ansehen ↗"
+    },
+    {
+      "id": "print-laxvox",
+      "category": "print",
+      "title": "LaxVOX Stimmtraining",
+      "subtitle": "Broschüre · 11 Seiten",
+      "label": "Print · Broschüre",
+      "cover": "print",
+      "thumbnail": "assets/print/laxvox-cover.jpg",
+      "images": [
+        "assets/print/laxvox-cover.jpg"
+      ],
+      "description": "Broschüre für atem · stimme · mensch SEMINARE zu Stimmbildung, Stimmtherapie, Technik und Pädagogik mit dem LaxVOX-Stimmtrainer.",
+      "url": "assets/print/laxvox-broschuere.pdf",
+      "urlLabel": "Broschüre als PDF ansehen ↗"
+    },
+    {
+      "id": "print-signal-01",
+      "category": "print",
+      "title": "SIGNAL//01",
+      "subtitle": "Eventplakat · Audiovisual Night",
+      "label": "Print · Plakat",
+      "cover": "print",
+      "thumbnail": "assets/print/signal-01.jpg",
+      "images": [
+        "assets/print/signal-01.jpg"
+      ],
+      "description": "Plakat für eine audiovisuelle Clubnacht in Zürich (Electronic / Techno / Experimental): Line-up, Datum und Zeit in einer klaren Grotesk über einer flüssigen grünen Form auf Schwarz."
     },
     {
       "id": "video-E8TlDrHw-fA",
