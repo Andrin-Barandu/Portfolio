@@ -168,6 +168,7 @@ window.PORTFOLIO = {
     },
     {
       "id": "3d",
+      "hidden": true,
       "name": "3D / Blender",
       "symbol": "⬡",
       "color": "#75baa8",
@@ -175,6 +176,7 @@ window.PORTFOLIO = {
     },
     {
       "id": "branding",
+      "hidden": true,
       "name": "Branding",
       "symbol": "Aa",
       "color": "#df958b",

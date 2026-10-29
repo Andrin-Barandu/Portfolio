@@ -1,6 +1,10 @@
 (() => {
   "use strict";
   const data = window.PORTFOLIO;
+  // Categories marked "hidden" in content.js stay out of the desktop, sidebar, About and project lists.
+  const hiddenCategories = new Set(data.categories.filter((c) => c.hidden).map((c) => c.id));
+  data.categories = data.categories.filter((c) => !hiddenCategories.has(c.id));
+  data.projects = data.projects.filter((p) => !hiddenCategories.has(p.category));
   const desktop = document.querySelector("#desktop");
   const windowsRoot = document.querySelector("#windows");
   const mobile = window.matchMedia("(max-width:760px)");
